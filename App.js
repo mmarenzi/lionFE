@@ -9,7 +9,18 @@ import HomeScreen from './src/screens/Home';
 import AboutScreen from './src/screens/About';
 import HelpScreen from './src/screens/Help';
 
+
+
 const HomeStack = createStackNavigator();
+const express = require('express');
+const app = express();
+const port = 8080;
+
+app.get('get', (req, res) => res.send('PIPELINE TEST SUCCESSFUL!"));
+
+app.listen(port);
+console.log('App running on http://localhost${port}');
+
 
 function HomeStackScreen() {
   return (
